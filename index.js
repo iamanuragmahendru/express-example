@@ -9,6 +9,12 @@ app.set("view engine", hbs);
 app.use("/", routes);
 app.use(express.static(path.join(__dirname, "/public")));
 
+app.get("/sum", (req, res) => {
+  res.json({
+    sum: 20,
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`app is running on PORT ${PORT}`);
 });
